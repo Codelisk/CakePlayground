@@ -9,7 +9,6 @@ using Cake.Common.Tools.DotNet.Build;
 using Cake.Common.Tools.DotNet.Test;
 using Cake.Xamarin;
 using Cake.Common.Tools.MSBuild;
-using Build.Tasks.Android;
 using Build.Tasks.General.AppCenter;
 
 public static class Program
@@ -29,11 +28,11 @@ public class BuildContext : FrostingContext
     public BuildContext(ICakeContext context)
         : base(context)
     {
-        MsBuildConfiguration = context.Argument("configuration", "Debug");
+        MsBuildConfiguration = context.Argument("configuration", "Release");
     }
 }
 
-[IsDependentOn(typeof(DsitributeAndroidTask))]
+[IsDependentOn(typeof(DistributeIosTask))]
 public sealed class Default : FrostingTask
 {
 }

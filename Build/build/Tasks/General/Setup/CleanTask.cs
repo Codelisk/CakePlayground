@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Build.Tasks.General.Setup
 {
-    [TaskName("Clean")]
+    [TaskName(nameof(CleanTask))]
     public sealed class CleanTask : BaseTask
     {
         public override void Run(BuildContext context)

@@ -1,8 +1,6 @@
 ﻿using Build.Constants;
 using Build.Tasks.Base;
-using Build.Tasks.General.Setup;
 using Cake.AppCenter;
-using Cake.Common.IO;
 using Cake.Frosting;
 using System;
 using System.Collections.Generic;
@@ -12,14 +10,17 @@ using System.Threading.Tasks;
 
 namespace Build.Tasks.General.AppCenter
 {
-    [TaskName(nameof(LoginTask))]
-    [IsDependentOn(typeof(SetupTask))]
-    public sealed class LoginTask : BaseTask
+    [TaskName(nameof(DistributeIosTask))]
+    [IsDependentOn(typeof(LoginTask))]
+    public sealed class DistributeIosTask : BaseTask
     {
         public override void Run(BuildContext context)
         {
-            context.AppCenterLogin(new AppCenterLoginSettings
+            var test = context.AppCenterDistributeReleaseWithResult(new AppCenterDistributeReleaseSettings
             {
+                File = AppCenterConstants.AndroidFile,
+                Group = AppCenterConstants.AndroidDistributionGroup,
+                App = AppCenterConstants.AndroidApp,
                 Token = AppCenterConstants.AndroidToken
             });
         }

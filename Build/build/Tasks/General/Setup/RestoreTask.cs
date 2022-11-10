@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Build.Tasks.General.Setup
 {
-    [TaskName("Restore")]
+    [TaskName(nameof(RestoreTask))]
     [IsDependentOn(typeof(CleanTask))]
     public sealed class RestoreTask : BaseTask
     {

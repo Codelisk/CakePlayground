@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Build.Tasks.General.AppCenter
 {
-    [TaskName("DsitributeAndroid")]
-    [IsDependentOn(typeof(LoginTask))]
-    public sealed class DsitributeAndroidTask : BaseTask
+    [TaskName(nameof(DistributeAndroidTask))]
+    //[IsDependentOn(typeof(LoginTask))]
+    public sealed class DistributeAndroidTask : BaseTask
     {
         public override void Run(BuildContext context)
         {
