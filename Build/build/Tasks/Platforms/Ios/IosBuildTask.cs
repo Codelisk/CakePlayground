@@ -16,7 +16,7 @@ using Cake.Core.Diagnostics;
 namespace Build.Tasks.Platforms.Ios
 {
     [TaskName(nameof(IosBuildTask))]
-    //[IsDependentOn(typeof(RestoreTask))]
+    [IsDependentOn(typeof(RestoreTask))]
     public sealed class IosBuildTask : BaseTask
     {
         public override void Run(BuildContext context)

@@ -18,9 +18,9 @@ namespace Build.Tasks.General.AppCenter
         {
             var test = context.AppCenterDistributeReleaseWithResult(new AppCenterDistributeReleaseSettings
             {
-                File = AppCenterConstants.AndroidFile,
-                Group = AppCenterConstants.AndroidDistributionGroup,
-                App = AppCenterConstants.AndroidApp,
+                File = AppCenterConstants.iOSFile,
+                Group = AppCenterConstants.IosDistributionGroup,
+                App = AppCenterConstants.IosApp,
                 Token = AppCenterConstants.AndroidToken
             });
         }

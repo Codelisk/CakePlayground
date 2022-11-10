@@ -12,15 +12,16 @@ namespace Build.Constants
         public const string IosToken = "4685bad124438b61cdc087562523c374adef2492";
 
         public static string AndroidFile = $"{GeneralConstants.APP_PACKAGE_FOLDER_NAME}/com.companyname.app1-Signed.apk";
-        public const string iOSFile = $"{GeneralConstants.APP_PACKAGE_FOLDER_NAME}/Orderlyze.ipa";
+        public const string iOSFile = $"{GeneralConstants.APP_PACKAGE_FOLDER_NAME}/App1.iOS.ipa";
 
 
         public const string AndroidApp = "Orderlyze/TestAndroid";
+        public const string IosApp = "Orderlyze/TestIos";
 
         public const string UserToken = "7f7f4f1da89a7fff77741841c6c4b2afb66e0afe";
 
         public const string AndroidDistributionGroup = "Collaborators";
-        public const string IosDistributionGroup = "Dev";
+        public const string IosDistributionGroup = AndroidDistributionGroup;
         public const string AndroidDistributionGroupId = "6db33be4-e87e-4ae0-a718-4c34b4e91f6c";
         public const string IosDistributionGroupId = "1df984a7-e7a9-45f6-9be0-692f1c6223d0";
     }
