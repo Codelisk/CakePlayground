@@ -9,7 +9,7 @@ namespace Build.Constants
 {
     public static class AndroidConstants
     {
-        public static string CSRPOJ_PATH = Path.Combine(GeneralConstants.RootPath, $"{GeneralConstants.AppName}.Android/{GeneralConstants.AppName}.Android.csproj");
+        public static string CSRPOJ_PATH = Path.Combine(GeneralConstants.RootPath, $"{GeneralConstants.AppName}.Android", $"{GeneralConstants.AppName}.Android.csproj");
 
         public const string ANDROID_KEYSTORE_ALIAS = "Legacyorder";
         public const string ANDROID_KEYSTORE_PASSWORD = "Huda$$18";

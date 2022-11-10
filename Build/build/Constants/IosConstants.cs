@@ -9,6 +9,6 @@ namespace Build.Constants
 {
     public static class IosConstants
     {
-        public static string CSRPOJ_PATH = Path.Combine(GeneralConstants.RootPath, $"{GeneralConstants.AppName}.iOS/{GeneralConstants.AppName}.iOS.csproj");
+        public static string CSRPOJ_PATH = Path.Combine(GeneralConstants.RootPath, $"{GeneralConstants.AppName}.iOS",$"{GeneralConstants.AppName}.iOS.csproj");
     }
 }
