@@ -7,6 +7,10 @@ using Cake.Common.IO;
 using Cake.Common.Tools.DotNet;
 using Cake.Common.Tools.DotNet.Build;
 using Cake.Common.Tools.DotNet.Test;
+using Cake.Xamarin;
+using Cake.Common.Tools.MSBuild;
+using Build.Tasks.Android;
+using Build.Tasks.General.AppCenter;
 
 public static class Program
 {
@@ -29,53 +33,7 @@ public class BuildContext : FrostingContext
     }
 }
 
-[TaskName("Clean")]
-public sealed class CleanTask : FrostingTask<BuildContext>
-{
-    public override void Run(BuildContext context)
-    {
-        context.CleanDirectory($"../App1/App1/bin/{context.MsBuildConfiguration}");
-    }
-}
-
-[TaskName("Restore")]
-[IsDependentOn(typeof(CleanTask))]
-public sealed class RestoreTask : FrostingTask<BuildContext>
-{
-    public override void Run(BuildContext context)
-    {
-        context.DotNetRestore("../App1/App1.sln");
-    }
-}
-
-[TaskName("Build")]
-[IsDependentOn(typeof(RestoreTask))]
-public sealed class BuildTask : FrostingTask<BuildContext>
-{
-    public override void Run(BuildContext context)
-    {
-        context.DotNetBuild("../App1/App1.sln", new DotNetBuildSettings
-        {
-            Configuration = context.MsBuildConfiguration,
-        });
-    }
-}
-
-[TaskName("Test")]
-[IsDependentOn(typeof(BuildTask))]
-public sealed class TestTask : FrostingTask<BuildContext>
-{
-    public override void Run(BuildContext context)
-    {
-        context.DotNetTest("../App1/App1.sln", new DotNetTestSettings
-        {
-            Configuration = context.MsBuildConfiguration,
-            NoBuild = true,
-        });
-    }
-}
-
-[IsDependentOn(typeof(TestTask))]
+[IsDependentOn(typeof(DsitributeAndroidTask))]
 public sealed class Default : FrostingTask
 {
 }
