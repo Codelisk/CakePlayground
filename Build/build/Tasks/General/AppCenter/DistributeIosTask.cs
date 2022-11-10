@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Build.Tasks.General.AppCenter
 {
     [TaskName(nameof(DistributeIosTask))]
-    [IsDependentOn(typeof(LoginTask))]
+    //[IsDependentOn(typeof(DistributeAndroidTask))]
     public sealed class DistributeIosTask : BaseTask
     {
         public override void Run(BuildContext context)
@@ -21,7 +21,7 @@ namespace Build.Tasks.General.AppCenter
                 File = AppCenterConstants.iOSFile,
                 Group = AppCenterConstants.IosDistributionGroup,
                 App = AppCenterConstants.IosApp,
-                Token = AppCenterConstants.AndroidToken
+                Token = AppCenterConstants.Token
             });
         }
     }

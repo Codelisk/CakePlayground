@@ -32,7 +32,7 @@ public class BuildContext : FrostingContext
     }
 }
 
-[IsDependentOn(typeof(DistributeIosTask))]
+[IsDependentOn(typeof(DistributeAndroidTask))]
 public sealed class Default : FrostingTask
 {
 }

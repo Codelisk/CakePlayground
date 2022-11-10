@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Build.Tasks.General.AppCenter
 {
     [TaskName(nameof(SetupTask))]
-    [IsDependentOn(typeof(IosBuildTask))]
+    [IsDependentOn(typeof(AndroidBuildTask))]
     public sealed class SetupTask : BaseTask
     {
         public override void Run(BuildContext context)

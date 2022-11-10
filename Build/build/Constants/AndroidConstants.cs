@@ -9,10 +9,11 @@ namespace Build.Constants
 {
     public static class AndroidConstants
     {
-        public static string CSRPOJ_PATH = Path.Combine(GeneralConstants.RootPath, $"{GeneralConstants.AppName}.Android", $"{GeneralConstants.AppName}.Android.csproj");
+        public static string ANDROID_PROJECT_PATH = Path.Combine(GeneralConstants.ROOT_APP_PATH, $"{GeneralConstants.APPNAME}.Android");
+        public static string CSRPOJ_PATH = Path.Combine(ANDROID_PROJECT_PATH, $"{GeneralConstants.APPNAME}.Android.csproj");
+        public static string PATH_TO_ANDROID_KEYSTORE_FILE = "LegacyOrder.keystore";
 
         public const string ANDROID_KEYSTORE_ALIAS = "Legacyorder";
         public const string ANDROID_KEYSTORE_PASSWORD = "Huda$$18";
-        public const string PATH_TO_ANDROID_KEYSTORE_FILE = "C:\\Users\\Daniel\\Desktop\\Projects\\Orderlyze\\Cake\\CakePlayground\\Build\\App1\\App1.Android\\LegacyOrder.keystore";
     }
 }

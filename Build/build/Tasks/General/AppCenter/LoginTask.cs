@@ -20,7 +20,7 @@ namespace Build.Tasks.General.AppCenter
         {
             context.AppCenterLogin(new AppCenterLoginSettings
             {
-                Token = AppCenterConstants.AndroidToken
+                Token = AppCenterConstants.Token
             });
         }
     }

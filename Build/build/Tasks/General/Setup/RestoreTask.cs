@@ -16,9 +16,9 @@ namespace Build.Tasks.General.Setup
     {
         public override void Run(BuildContext context)
         {
-            context.DotNetRestore(GeneralConstants.SlnPath, new Cake.Common.Tools.DotNet.Restore.DotNetRestoreSettings
+            context.DotNetRestore(GeneralConstants.SLN_PATH, new Cake.Common.Tools.DotNet.Restore.DotNetRestoreSettings
             {
-                Sources = new[] {"https://api.nuget.org/v3/index.json"}
+                ConfigFile = new(GeneralConstants.NUGETCONFIG_PATH)
             });
         }
     }

@@ -24,14 +24,7 @@ namespace Build.Tasks.Platforms.Android
         public override void Run(BuildContext context)
         {
             bool sign = true;
-            var result = context.BuildAndroidApk(AndroidConstants.CSRPOJ_PATH, sign, context.MsBuildConfiguration, configurator: msBuildSettings =>
-            {
-                msBuildSettings.WithProperty("AndroidKeyStore", "True")
-                               .WithProperty("AndroidSigningKeyAlias", AndroidConstants.ANDROID_KEYSTORE_ALIAS)
-                               .WithProperty("AndroidSigningKeyPass", AndroidConstants.ANDROID_KEYSTORE_PASSWORD)
-                               .WithProperty("AndroidSigningKeyStore", AndroidConstants.PATH_TO_ANDROID_KEYSTORE_FILE)
-                               .WithProperty("AndroidSigningStorePass", AndroidConstants.ANDROID_KEYSTORE_PASSWORD);
-            });
+            var result = context.BuildAndroidApk(AndroidConstants.CSRPOJ_PATH, sign, context.MsBuildConfiguration);
 
             var result2=context.MoveAppPackageToPackagesFolder(result);
         }
