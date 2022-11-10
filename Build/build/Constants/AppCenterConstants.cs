@@ -8,14 +8,14 @@ namespace Build.Constants
 {
     public static class AppCenterConstants
     {
-        public const string AndroidToken = "72a41b6e7f3444da497ceb07c778c5b7ca7da201";
+        public const string AndroidToken = "d3f27ef86752df1dc1b7d7255c643da5e78905ee";
         public const string IosToken = "4685bad124438b61cdc087562523c374adef2492";
 
-        public const string AndroidFile = "AppPackages/Orderlyze.apk";
-        public const string iOSFile = "AppPackages/Orderlyze.ipa";
+        public static string AndroidFile = $"{GeneralConstants.APP_PACKAGE_FOLDER_NAME}/com.companyname.app1-Signed.apk";
+        public const string iOSFile = $"{GeneralConstants.APP_PACKAGE_FOLDER_NAME}/Orderlyze.ipa";
 
 
-        public const string AndroidApp = "Test/TestApp";
+        public const string AndroidApp = "Orderlyze/TestAndroid";
 
         public const string UserToken = "7f7f4f1da89a7fff77741841c6c4b2afb66e0afe";
 

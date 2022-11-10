@@ -18,7 +18,7 @@ using Cake.Common.IO;
 namespace Build.Tasks.Android
 {
     [TaskName("Build")]
-    [IsDependentOn(typeof(LoginTask))]
+    [IsDependentOn(typeof(RestoreTask))]
     public sealed class BuildTask : BaseTask
     {
         public override void Run(BuildContext context)
@@ -33,7 +33,7 @@ namespace Build.Tasks.Android
                                .WithProperty("AndroidSigningStorePass", AndroidConstants.ANDROID_KEYSTORE_PASSWORD);
             });
 
-            MoveAppPackageToPackagesFolder(context, result);
+            var result2=MoveAppPackageToPackagesFolder(context, result);
         }
         public string MoveAppPackageToPackagesFolder(ICakeContext context, FilePath appPackageFilePath)
         {

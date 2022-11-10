@@ -1,4 +1,5 @@
 ﻿using Build.Constants;
+using Build.Tasks.Android;
 using Build.Tasks.Base;
 using Build.Tasks.General.Setup;
 using Cake.AppCenter;
@@ -15,7 +16,7 @@ using System.Threading.Tasks;
 namespace Build.Tasks.General.AppCenter
 {
     [TaskName("Setup")]
-    [IsDependentOn(typeof(RestoreTask))]
+    [IsDependentOn(typeof(BuildTask))]
     public sealed class SetupTask : BaseTask
     {
         public override void Run(BuildContext context)
