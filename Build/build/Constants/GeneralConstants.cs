@@ -11,9 +11,9 @@ namespace Build.Constants
     public static class GeneralConstants
     {
         private const string GOBACK = "..";
-        public const string APPNAME = "Orderlyze";
-        public static string ROOT_PATH = Path.Combine(GOBACK, GOBACK, GOBACK, "Orderlyze_Mobile");
-        public static string ROOT_APP_PATH = Path.Combine(ROOT_PATH, "src", APPNAME);
+        public const string APPNAME = "App1";
+        public static string ROOT_PATH = Path.Combine(GOBACK, APPNAME);
+        public static string ROOT_APP_PATH = ROOT_PATH;
         public static string SLN_PATH = Path.Combine(ROOT_PATH, $"{APPNAME}.sln");
         public static string NUGETCONFIG_PATH = Path.Combine(ROOT_PATH, "Nuget.config");
 

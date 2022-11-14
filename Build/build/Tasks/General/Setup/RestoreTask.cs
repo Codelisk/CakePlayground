@@ -16,10 +16,7 @@ namespace Build.Tasks.General.Setup
     {
         public override void Run(BuildContext context)
         {
-            context.DotNetRestore(GeneralConstants.SLN_PATH, new Cake.Common.Tools.DotNet.Restore.DotNetRestoreSettings
-            {
-                ConfigFile = new(GeneralConstants.NUGETCONFIG_PATH)
-            });
+            context.DotNetRestore(GeneralConstants.SLN_PATH, new Cake.Common.Tools.DotNet.Restore.DotNetRestoreSettings());
         }
     }
 }
