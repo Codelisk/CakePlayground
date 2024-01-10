@@ -18,8 +18,16 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.x.x
+      env:
+        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 'Add NuGet source'
+      run: |
+          dotnet nuget add source "https://sponsorconnect.dev/v3/index.json" --name "Connect" --username "Codelisk" --password ${{ secrets.SPONSOR_CONNECT_PASSWORD }} --store-password-in-clear-text
     - name: Restore Dependencies
-      run: dotnet restore ./MyApp/MyApp.Wasm/MyApp.Wasm.csproj
+      run: |
+        echo "${{ secrets.SPONSOR_CONNECT_PASSWORD }}"
+        dotnet restore ./MyApp/MyApp.Wasm/MyApp.Wasm.csproj
     - name: Build 
       run: dotnet build ./MyApp/MyApp.Wasm/MyApp.Wasm.csproj --no-restore -f $framework -c $config
     - name: Publish Artifacts
