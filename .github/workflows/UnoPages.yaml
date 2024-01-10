@@ -20,6 +20,14 @@ jobs:
         dotnet-version: 8.x.x
       env:
         NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 'Add NuGet source'
+      run: |
+          dotnet nuget add source "https://sponsorconnect.dev/v3/index.json"" \
+            -n "Connect" \
+            -u "Codelisk" \
+            -p ${{ secrets.SPONSOR_CONNECT_PASSWORD }} \
+            --store-password-in-clear-text
     - name: Restore Dependencies
       run: |
         echo "${{ secrets.SPONSOR_CONNECT_PASSWORD }}"
