@@ -1,0 +1,4 @@
+Assets/SplashScreen.png
+Assets/SharedAssets.md
+Uno.Fonts.Fluent/Fonts/uno-fluentui-assets.ttf
+MyApp.Wasm
