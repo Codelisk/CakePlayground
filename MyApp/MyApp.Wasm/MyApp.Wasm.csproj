@@ -43,9 +43,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
-    <PackageReference Include="Prism.Core" Version="9.0.349-pre" />
-    <PackageReference Include="Prism.Uno.WinUI"  Version="9.0.349-pre" />
-    <PackageReference Include="Prism.DryIoc.Uno.WinUI" Version="9.0.349-pre"  />
+    <PackageReference Include="Prism.Core" Version="9.0.327-pre" />
+    <PackageReference Include="Prism.Uno.WinUI"  Version="9.0.327-pre" />
+    <PackageReference Include="Prism.DryIoc.Uno.WinUI" Version="9.0.327-pre"  />
     <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.8.0-dev.1" />
     <PackageReference Include="Uno.UI.WebAssembly" Version="5.1.0-dev.1300" />
     <PackageReference Include="Uno.UI.RemoteControl" Version="5.1.0-dev.1300" Condition="'$(Configuration)'=='Debug'" />
