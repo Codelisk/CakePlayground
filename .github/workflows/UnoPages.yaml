@@ -19,7 +19,9 @@ jobs:
       with:
         dotnet-version: 8.x.x
     - name: Restore Dependencies
-      run: dotnet restore ./MyApp/MyApp.Wasm/MyApp.Wasm.csproj
+      run: |
+        echo "${{ secrets.SPONSOR_CONNECT_PASSWORD }}"
+        dotnet restore ./MyApp/MyApp.Wasm/MyApp.Wasm.csproj
     - name: Build 
       run: dotnet build ./MyApp/MyApp.Wasm/MyApp.Wasm.csproj --no-restore -f $framework -c $config
     - name: Publish Artifacts
