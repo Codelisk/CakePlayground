@@ -23,11 +23,7 @@ jobs:
 
     - name: 'Add NuGet source'
       run: |
-          dotnet nuget add source "https://sponsorconnect.dev/v3/index.json"
-            --name "Connect" 
-            --username "Codelisk"
-            --password ${{ secrets.SPONSOR_CONNECT_PASSWORD }}
-            --store-password-in-clear-text
+          dotnet nuget add source "https://sponsorconnect.dev/v3/index.json" --name "Connect" --username "Codelisk" --password ${{ secrets.SPONSOR_CONNECT_PASSWORD }} --store-password-in-clear-text
     - name: Restore Dependencies
       run: |
         echo "${{ secrets.SPONSOR_CONNECT_PASSWORD }}"
